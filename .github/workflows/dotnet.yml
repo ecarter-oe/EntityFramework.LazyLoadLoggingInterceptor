@@ -16,8 +16,8 @@ jobs:
     env:
       RepositoryOwner: ${{ github.repository_owner }}
     
-    permissions:
-      packages: write-all
+#     permissions:
+#       packages: write-all
 
     steps:
     - uses: actions/checkout@v3
