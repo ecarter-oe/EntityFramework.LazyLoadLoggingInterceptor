@@ -16,8 +16,9 @@ jobs:
     env:
       RepositoryOwner: ${{ github.repository_owner }}
     
-#     permissions:
-#       packages: write-all
+    permissions:
+      contents: read
+      packages: write
 
     steps:
     - uses: actions/checkout@v3
@@ -38,4 +39,3 @@ jobs:
       run: dotnet pack --no-build --include-symbols --version-suffix ${GITHUB_REF_NAME}-${GITHUB_RUN_NUMBER} --output ./publish
     - name: Push
       run: dotnet nuget push ./publish/EntityFramework.LazyLoadLoggingInterceptor.*-${GITHUB_REF_NAME}-${GITHUB_RUN_NUMBER}.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --skip-duplicate --api-key "${{ secrets.GITHUB_TOKEN }}"
-      
