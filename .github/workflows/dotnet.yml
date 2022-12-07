@@ -39,7 +39,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: nupkg
-        path: ./publish/EntityFramework.LazyLoadLoggingInterceptor.*-${GITHUB_REF_NAME}-${GITHUB_RUN_NUMBER}.nupkg
+        path: publish/EntityFramework.LazyLoadLoggingInterceptor.*-${GITHUB_REF_NAME}-${GITHUB_RUN_NUMBER}.nupkg
     - name: Push        
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
