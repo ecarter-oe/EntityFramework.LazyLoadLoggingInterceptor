@@ -4,6 +4,7 @@
 		<TargetFrameworks>net462; netstandard2.1</TargetFrameworks>
 	</PropertyGroup>
 	<PropertyGroup>
+		<RepositoryOwner Condition=" '$(RepositoryOwner)' == '' ">jamesmanning</RepositoryOwner>
 		<Title>EntityFramework.LazyLoadLoggingInterceptor</Title>
 		<Description>see https://github.com/jamesmanning/EntityFramework.LazyLoadLoggingInterceptor</Description>
 		<Company>James Manning</Company>
@@ -11,6 +12,8 @@
 		<Copyright>Copyright ©  2017</Copyright>
 		<VersionPrefix>1.3.0</VersionPrefix>
 		<VersionSuffix>dev</VersionSuffix>
+		<RepositoryUrl>https://github.com/$(RepositoryOwner)/EntityFramework.LazyLoadLoggingInterceptor</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="EntityFramework" Version="[6.3.0, 7.0.0)" />
