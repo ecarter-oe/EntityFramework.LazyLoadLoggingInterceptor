@@ -41,5 +41,5 @@ jobs:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       run: |
         cat /home/runner/work/EntityFramework.LazyLoadLoggingInterceptor/nuget.config
-        dotnet nuget push ./publish/EntityFramework.LazyLoadLoggingInterceptor.*-${GITHUB_REF_NAME}-${GITHUB_RUN_NUMBER}.nupkg --source "https://nuget.pkg.github.com/${RepositoryOwner}/index.json"
+        dotnet nuget push ./publish/EntityFramework.LazyLoadLoggingInterceptor.*-${GITHUB_REF_NAME}-${GITHUB_RUN_NUMBER}.nupkg
       
