@@ -29,4 +29,6 @@ jobs:
     - name: Pack
       run: dotnet pack --no-build --include-symbols --include-source --version-suffix ${GITHUB_REF_NAME}-${GITHUB_RUN_NUMBER} --output ./publish
     - name: Push
-      run: RepositoryOwner=${GITHUB_REPOSITORY_OWNER} dotnet nuget push .\publish\EntityFramework.LazyLoadLoggingInterceptor.*-${GITHUB_REF_NAME}-${GITHUB_RUN_NUMBER}.nupkg --source "https://nuget.pkg.github.com/${GITHUB_REPOSITORY_OWNER}/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
+      env:
+        RepositoryOwner: ${GITHUB_REPOSITORY_OWNER}
+      run: dotnet nuget push .\publish\EntityFramework.LazyLoadLoggingInterceptor.*-${GITHUB_REF_NAME}-${GITHUB_RUN_NUMBER}.nupkg --source "https://nuget.pkg.github.com/${GITHUB_REPOSITORY_OWNER}/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
